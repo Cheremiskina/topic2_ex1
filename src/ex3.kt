@@ -1,4 +1,4 @@
-fun main(){
+fun main() {
     var userInput = ""
     var isValidInput = false
     while (!isValidInput){
