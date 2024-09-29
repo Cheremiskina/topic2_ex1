@@ -18,12 +18,15 @@ fun main() {
         else
             println("Введено неверное значение. Повторите ввод.")
     }
-    var result = 0.0
-    when (sign){
-        '+' -> result = number1+number2
-        '-' -> result = number1-number2
-        '*' -> result = number1*number2
-        '/' -> result = number1/number2
+    val result = when (sign){
+        '+' -> number1+number2
+        '-' -> number1-number2
+        '*' -> number1*number2
+        '/' -> if (number2 != 0.0) number1/number2 else{
+            println("Ошибка: деление на ноль невозможно.")
+            return
+        }
+        else -> {return}
     }
     println("$number1 $sign $number2 = $result")
 }
