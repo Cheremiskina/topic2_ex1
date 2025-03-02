@@ -4,10 +4,12 @@ fun main() {
     while (!isValidInput){
         println("Введите натуральное число в 10-й системе счисления:")
         userInput = readln()
-        if(userInput.all { it.isDigit() } && userInput.toInt() > 0)
-            isValidInput = true
-        else
-            println("Введено неверное значение. Повторите ввод.")
+        if (userInput.isNotEmpty()){
+            if(userInput.all { it.isDigit() } && userInput.toInt() > 0)
+                isValidInput = true
+            else
+                println("Введено неверное значение. Повторите ввод.")
+        }
     }
     var binary = arrayOf<Int>()
     var decimal = userInput.toInt()
