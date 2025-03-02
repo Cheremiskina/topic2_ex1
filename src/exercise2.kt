@@ -1,12 +1,17 @@
 fun main() {
     println("Введите строку символов:")
     val str = readln()
-    val charCount = sortedMapOf<Char,Int>()
+    if(str.isNotEmpty()){
+        val charCount = sortedMapOf<Char,Int>()
 
-    for (char in str) {
-        charCount[char] = charCount.getOrDefault(char, 0) + 1
+        for (char in str) {
+            charCount[char] = charCount.getOrDefault(char, 0) + 1
+        }
+        charCount.forEach{it ->
+            println("${it.key} - ${it.value}")
+        }
     }
-    charCount.forEach{entry ->
-        println("${entry.key} - ${entry.value}")
+    else{
+        println("Вы ввели пустую строку.")
     }
 }
